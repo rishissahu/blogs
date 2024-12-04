@@ -39,11 +39,9 @@ def commit_and_push():
         print(f"Error during commit/push: {e}")
 
 if __name__ == "__main__":
-    # Random sleep interval (between 1 and 3600 seconds)
-    sleep_interval = random.randint(1, 3600)
-    print(f"Sleeping for {sleep_interval} seconds...")
-    time.sleep(sleep_interval)
-
-    # Perform commit and push
-    write_to_file()
-    commit_and_push()
+    while True:
+        # Perform commit and push every 10 seconds
+        write_to_file()
+        commit_and_push()
+        print("Waiting for 10 seconds before the next commit...")
+        time.sleep(10)  # Wait for 10 seconds
